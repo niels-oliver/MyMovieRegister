@@ -118,15 +118,13 @@ namespace MyMovieRegister.Controllers
 
         private string GetPosterURL(string movieTitle)
         {
-            XmlDocument omdbXML = new XmlDocument();
-            omdbXML.Load("http://www.omdbapi.com/?t=" + movieTitle + "&r=xml&apikey=ab3f8807");
-            XmlNodeList nodes = omdbXML.DocumentElement.SelectNodes("movie");
+            XDocument omdbXML = XDocument.Load("http://www.omdbapi.com/?t=" + movieTitle + "&r=xml&apikey=ab3f8807");
 
-            if (nodes.Count >= 1)
+            try
             {
-                return nodes[0].Attributes["poster"].Value;
+                return omdbXML.Root.Element("movie").Attribute("poster").Value;
             }
-            else
+            catch
             {
                 return "https://static.thenounproject.com/png/140281-200.png";
             }
