@@ -41,9 +41,7 @@ namespace MyMovieRegister.Controllers
         {
             MovieModel viewMovieModel = new MovieModel();
             viewMovieModel.movieDB = db;
-            var selectedMovie = (from rows in db.Movies
-                                 where rows.id == selectedMovieId
-                                 select rows).SingleOrDefault();
+            Movie selectedMovie = db.Movies.Find(selectedMovieId);
             viewMovieModel.selectedMovie = (Movie)selectedMovie;
             return View(viewMovieModel);
         }
