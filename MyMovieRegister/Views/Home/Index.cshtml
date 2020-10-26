@@ -1,0 +1,91 @@
+﻿<!--Contains the HTML for the main page. You can select, edit and remove movies through this page.-->
+
+@model MyMovieRegister.Models.MovieModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    <title>My movies</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <p class="headerText">Register över mina fantastiska filmer!</p>
+        </div>
+        <div class="movieCardContainer">
+            @foreach (var movie in Model.movieDB.Movies)
+            {
+                <div class="movieCard">
+                    <div class="mainInfoContainer">
+                        <p class="titleText">@Html.DisplayFor(modelItem => movie.title)</p>
+                        <div class="movieImageContainer">
+                            <img class="movieImage" src="@Html.DisplayFor(modelItem => movie.posterUrl)" />
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("Index", "Home", new { selectedMovieId = movie.id }, FormMethod.Post))
+                    {
+                        <input type="submit" name="selectButton" value="Select">
+                    }
+                </div>
+            }
+        </div>
+
+        @if (Model.selectedMovie != null)
+        {
+            <div class="moreInfoContainer">
+                <div class="selectedMovieImageContainer">
+                    <img class="movieImage" src="@Html.DisplayFor(modelItem => Model.selectedMovie.posterUrl)" />
+                </div>
+                @using (Html.BeginForm("SaveChanges", "Home", new { movieId = Model.selectedMovie.id }))
+                {
+                    <div class="infoTextBoxContainer">
+                        <label class="infoTextBoxLabel">Title</label>
+                        @Html.TextBoxFor(m => m.selectedMovie.title, new { @class = "infoTextBox", placeholder = "Title" })
+
+                    </div>
+                    <div class="infoTextBoxContainer">
+                        <label class="infoTextBoxLabel">Description</label>
+                        @Html.TextBoxFor(m => m.selectedMovie.description, new { @class = "infoTextBox", placeholder = "Description" })
+
+                    </div>
+                    <div class="infoTextBoxContainer">
+                        <label class="infoTextBoxLabel">Length</label>
+                        @Html.TextBoxFor(m => m.selectedMovie.length, new { @class = "infoTextBox", placeholder = "Length" })
+
+                    </div>
+                    <div class="infoTextBoxContainer">
+                        <label class="infoTextBoxLabel">Year</label>
+                        @Html.TextBoxFor(m => m.selectedMovie.year, new { @class = "infoTextBox", placeholder = "Year" })
+
+                    </div>
+                    <div class="infoTextBoxContainer">
+                        <label class="infoTextBoxLabel">Genre</label>
+                        @Html.TextBoxFor(m => m.selectedMovie.genre, new { @class = "infoTextBox", placeholder = "Genre" })
+
+                    </div>
+                    <div class="infoCheckBoxContainer">
+                        <label class="infoTextBoxLabel">Has seen</label>
+                        @Html.CheckBoxFor(m => m.selectedMovie.hasSeen, new { @class = "infoCheckBox", Model.selectedMovie.hasSeen })
+                    </div>
+                    <div class="infoCheckBoxContainer">
+                        <label class="infoTextBoxLabel">Is favourite</label>
+                        @Html.CheckBoxFor(m => m.selectedMovie.isFavourite, new { @class = "infoCheckBox", Model.selectedMovie.isFavourite })
+                    </div>
+
+                    <input type="submit" name="saveButton" value="Save">
+                }
+                @using (Html.BeginForm("DeleteMovie", "Home", new { movieId = Model.selectedMovie.id }))
+                {
+                    <input type="submit" name="deleteButton" class="deleteButton" value="Delete movie">
+                }
+            </div>
+        }
+    </div>
+</body>
+</html>

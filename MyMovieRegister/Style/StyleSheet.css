@@ -1,0 +1,99 @@
+﻿html, body {
+    height: 100%;
+    background: url('../Resources/Images/theater_curtains.jpg') no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.header {
+}
+
+.headerText{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.movieCard {
+    background-color: rgba(56, 56, 56, 0.5);
+    margin: 10px;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    float: left;
+}
+
+.movieImageContainer {
+    width: 85px;
+    height: 125px;
+    display: inline-block;
+}
+
+.movieImage {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+.moreInfoContainer {
+    height: auto;
+    width: 40%;
+    margin: auto;
+    background-color: rgba(56, 56, 56, 0.5);
+    padding: 10px;
+    overflow: auto;
+}
+
+.movieCardContainer {
+    display: inline-block;
+}
+
+.titleText {
+    color: white;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.infoTextBoxContainer {
+    width: 50%;
+    margin: auto;
+    display: inline-block;
+}
+
+.infoTextBoxLabel {
+    float: left;
+    color:white;
+}
+
+.infoTextBox {
+    float: right;
+}
+
+.infoCheckBoxContainer {
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+}
+
+.infoCheckBox {
+    float: right;
+}
+
+.selectedMovieImageContainer {
+    float: left;
+    width: 170px;
+    height: 250px;
+}
+
+.deleteButton {
+    background-color: red;
+    margin-top: 3px;
+}
+

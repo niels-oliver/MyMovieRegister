@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<movies>
+  <movie>
+    <title>Goosebumps</title>
+    <description>A teenager teams up with the daughter of young adult horror author R.L. Stine after the writer's imaginary demons are set free on the town of Madison, Delaware.</description>
+    <length>103</length>
+    <year>2015</year>
+    <genre>Action,Adventure,Comedy</genre>
+    <hasSeen>True</hasSeen>
+    <isFavourite>False</isFavourite>
+  </movie>
+  <movie>
+    <title>The Martian</title>
+    <description>During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive.</description>
+    <length>144</length>
+    <year>2015</year>
+    <genre> Adventure, Drama, Sci-Fi</genre>
+    <hasSeen>false</hasSeen>
+    <isFavourite>true</isFavourite>
+  </movie>
+  <movie>
+    <title>Bridge of Spies</title>
+    <description>An American lawyer is recruited by the CIA during the Cold War to help rescue a pilot detained in the Soviet Union.</description>
+    <length>141</length>
+    <year>2015</year>
+    <genre>Biography, Drama, History</genre>
+    <hasSeen>false</hasSeen>
+    <isFavourite>false</isFavourite>
+  </movie>
+  <movie>
+    <title>Crimson Peak</title>
+    <description>In the aftermath of a family tragedy, an aspiring author is torn between love for her childhood friend and the temptation of a mysterious outsider. Trying to escape the ghosts of her past, she is swept away to a house that breathes, bleeds - and remembers.</description>
+    <length>119</length>
+    <year>2015</year>
+    <genre>Drama, Fantasy, Horror</genre>
+    <hasSeen>false</hasSeen>
+    <isFavourite>false</isFavourite>
+  </movie>
+  <movie>
+    <title>Woodlawn</title>
+    <description>A gifted high school football player must learn to embrace his talent and his faith as he battles racial tensions on and off the field.</description>
+    <length>123</length>
+    <year>2015</year>
+    <genre>Drama</genre>
+    <hasSeen>false</hasSeen>
+    <isFavourite>true</isFavourite>
+  </movie>
+</movies>
