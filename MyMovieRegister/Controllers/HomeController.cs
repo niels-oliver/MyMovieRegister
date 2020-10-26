@@ -120,14 +120,17 @@ namespace MyMovieRegister.Controllers
         {
             XDocument omdbXML = XDocument.Load("http://www.omdbapi.com/?t=" + movieTitle + "&r=xml&apikey=ab3f8807");
 
-            try
+
+            if(omdbXML.Root.Attribute("response").Value != "False")
             {
                 return omdbXML.Root.Element("movie").Attribute("poster").Value;
+
             }
-            catch
+            else
             {
                 return "https://static.thenounproject.com/png/140281-200.png";
             }
+            
         }
     }
 }
